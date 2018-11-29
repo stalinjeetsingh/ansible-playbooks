@@ -26,3 +26,18 @@ hotsname or ip
 
 -u username (in case you have not setup for password less communication)
 -i for inventory
+--private-key=devops.pem (in case you have not set the path of private key in etc.cnf file)
+syntax:
+ansible-playbook - hosts --private-key=devops.pem useradd.yml
+##useradd.yml is a yml file to add a user
+
+- name: to adda user
+  hosts: all 
+  become: yes
+  tasks:
+   - name: adding user 
+     user: 
+       name: stalin
+       shell: /bin/false
+       uid: 1010
+       group: 100
