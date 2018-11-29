@@ -6,6 +6,8 @@ describe your automation jobs in a way that approaches plain English.
 Ansible works by connecting to your nodes and pushing out small programs, called "Ansible modules" to them.
 Ansible then executes these modules (over SSH by default), and removes them when finished.
 
+it can connect to 100 of servers at the same time and can run task all at once which is not possible even with a scripting.
+
 Here's what a plain text inventory file looks like:
 
 [webservers]
