@@ -1,0 +1,28 @@
+Ansible is open source software that automates software provisioning, configuration management, and application deployment. 
+Ansible connects via SSH, remote PowerShell.
+It uses no agents and no additional custom security infrastructure.
+it uses a very simple language (YAML, in the form of Ansible Playbooks) that allow you to 
+describe your automation jobs in a way that approaches plain English.
+Ansible works by connecting to your nodes and pushing out small programs, called "Ansible modules" to them.
+Ansible then executes these modules (over SSH by default), and removes them when finished.
+
+Here's what a plain text inventory file looks like:
+
+[webservers]
+www1.example.com
+www2.example.com
+
+[dbservers]
+db0.example.com
+db1.example.com
+
+*******Lets start*****************
+on your Linux machine
+sudo yum install ansible -y
+
+vi hosts
+[myservers]
+hotsname or ip
+
+-u username (in case you have not setup for password less communication)
+-i for inventory
