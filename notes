@@ -6,6 +6,13 @@ describe your automation jobs in a way that approaches plain English.
 Ansible works by connecting to your nodes and pushing out small programs, called "Ansible modules" to them.
 Ansible then executes these modules (over SSH by default), and removes them when finished.
 
+## in case you are using google cloud, create a private and public kye pair 
+https://qsandbox.com/tools/private-public-keygen
+
+save public key as dev.pub and private key as dev.pem in notepad
+add dev.pub in metadata field of google vm
+for private key, simply cd ~ than vi dev.pem and paste dev.pem content. tahn chmod 600 dev.pem.
+
 it can connect to 100 of servers at the same time and can run task all at once which is not possible even with a scripting.
 
 Here's what a plain text inventory file looks like:
