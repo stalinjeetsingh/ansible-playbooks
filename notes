@@ -50,3 +50,19 @@ ansible-playbook - hosts --private-key=devops.pem useradd.yml
        shell: /bin/false
        uid: 1010
        group: 100
+       
+       *******************************************
+       
+       - name: play1
+  hosts: all
+  tasks:
+    - name: play 1 task
+      debug:
+        msg: "hello"
+
+- name: play2
+  hosts: all
+  tasks:
+    - name: play 2 task
+      debug:
+        msg: "how are you"
