@@ -26,3 +26,7 @@ we juts need to creata role.yml and inside it point to diffrent roles like sampl
  
  roles fuction is to increase the usablity with minimum change.
  
+ handler is to resart a serive if everthing goes acc to plan or anything changed.
+ but whatever task have " notify: test_handler" will be resterated only once the task if finished.
+ if inside a play we donot put notify: test_handler it will be effect the service.
+ 
