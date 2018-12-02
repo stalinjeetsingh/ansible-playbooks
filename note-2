@@ -1,0 +1,28 @@
+roles
+## intead of task we can use use roles like
+
+we juts need to creata role.yml and inside it point to diffrent roles like sample
+- name: roles example
+  hosts: all
+  roles: sample
+  
+ #####################
+ 
+ now sample contain diffrent files like
+ sample.yml
+  tasks
+   - main.yml
+  files
+  - main.yml
+  vars
+  - main.yml
+  handlers
+  - main.yml
+  files
+  - main.yml
+  templates
+  - test.j2
+ ***********************************************
+ 
+ roles fuction is to increase the usablity with minimum change.
+ 
