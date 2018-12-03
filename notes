@@ -6,12 +6,12 @@ describe your automation jobs in a way that approaches plain English.
 Ansible works by connecting to your nodes and pushing out small programs, called "Ansible modules" to them.
 Ansible then executes these modules (over SSH by default), and removes them when finished.
 
-## in case you are using google cloud, create a private and public kye pair 
+## in case you are using google cloud, create a private and public key pair 
 https://qsandbox.com/tools/private-public-keygen
 
 save public key as dev.pub and private key as dev.pem in notepad
 add dev.pub in metadata field of google vm
-for private key, simply cd ~ than vi dev.pem and paste dev.pem content. tahn chmod 600 dev.pem.
+for private key, simply cd ~ than vi dev.pem and paste dev.pem content. than chmod 600 dev.pem.
 
 it can connect to 100 of servers at the same time and can run task all at once which is not possible even with a scripting.
 
@@ -53,7 +53,7 @@ ansible-playbook - hosts --private-key=devops.pem useradd.yml
        
        *******************************************
        
-       - name: play1
+- name: play1
   hosts: all
   tasks:
     - name: play 1 task
@@ -66,3 +66,16 @@ ansible-playbook - hosts --private-key=devops.pem useradd.yml
     - name: play 2 task
       debug:
         msg: "how are you"
+        *******************************
+        
+   vars_prompt: to ask for varibale as input at run
+   -e url1= www.google.com (to pass varibale in cli while running the command)
+   -m setup ## to gather facts. Its the default moudlue which ansible run to gather facts
+   -t tagname
+   register: out (out will store the output) or out.stdout
+   vars_file:
+        -name: read var from file
+         hosts: all
+         vars_file: 
+               - vars.yml
+    we have already created a vars.yml to put our varibales there.vars.yml is a separate file to store our input.
